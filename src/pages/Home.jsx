@@ -8,7 +8,7 @@ const Home = () => {
       <section className="home">
         <div className="hero">
           <div className="hero-content">
-            <h2>Expert en Gestion des Systèmes d'Information</h2>
+            <h2>Expert en Management des Systèmes d'Information</h2>
             <p>Professionel dans la transformation digitale et le management des SI</p>
             <div className="cta-buttons">
               <Link to="/contact" className="btn primary">Me contacter</Link>
@@ -18,7 +18,7 @@ const Home = () => {
           <div className="hero-image">
             {/* Image placeholder */}
             <div >
-                <img src='image.jpg' style={{width:200,padding:10,borderRadius:50}}/>
+                <img src="image.jpg" style={{width:200,padding:10,borderRadius:50}} />
             </div>
           </div>
         </div>
@@ -40,6 +40,14 @@ const Home = () => {
               <h4>Transformation Digitale</h4>
             </div>
             <div className="skill-card">
+              <div className="skill-icon">🛠️</div>
+              <h4>Installation Systeme et Maintenance</h4>
+            </div>
+            <div className="skill-card">
+              <div className="skill-icon">💻</div>
+              <h4>Analyse de données</h4>
+            </div>
+            <div className="skill-card">
               <div className="skill-icon">👥</div>
               <h4>Management d'Équipes</h4>
             </div>
@@ -51,6 +59,7 @@ const Home = () => {
               <div className="skill-icon">🔒</div>
               <h4>Sécurité Informatique</h4>
             </div>
+           
           </div>
         </div>
      </section>

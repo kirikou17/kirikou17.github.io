@@ -6,11 +6,11 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-logo">
             <h3>Moussa KANOUTE</h3>
-            <p>Manageur Systèmes d'Information</p>
+            <p>Manageur de Systèmes d'Information</p>
           </div>
           <div className="footer-nav">
             <ul>
-              <li><Link to="/portfolio">Accueil</Link></li>
+              <li><Link to="/portfolio/">Accueil</Link></li>
               <li><Link to="/competences">Compétences</Link></li>
               <li><Link to="/experiences">Expériences</Link></li>
               {/* <li><Link to="/projets">Projets</Link></li> */}
