@@ -60,7 +60,7 @@ const Contact = () => {
                 <FaGithub size={25} color="black" />
               </a>
               <a href="#" className="social-icon">
-              <FaLinkedin size={25} color="aliceblue" />
+              <FaLinkedin size={25} color="blue" />
               </a>
               
             </div>
