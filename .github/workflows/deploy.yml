@@ -16,11 +16,9 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v3
-        with:
-          node-version: 18 # Spécifiez une version de Node.js
 
       - name: Install dependencies
-        run: npm ci # Utilisez `npm ci` pour une installation plus rapide et fiable
+        uses: bahmutov/npm-install@v1
 
       - name: Build project
         run: npm run build
