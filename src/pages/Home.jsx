@@ -18,7 +18,7 @@ const Home = () => {
           <div className="hero-image">
             {/* Image placeholder */}
             <div >
-                <img src='/image.jpg' style={{width:200,padding:10,borderRadius:50}}/>
+                <img src='./public/image.jpg' style={{width:200,padding:10,borderRadius:50}}/>
             </div>
           </div>
         </div>
