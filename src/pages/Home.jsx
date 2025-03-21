@@ -11,14 +11,14 @@ const Home = () => {
             <h2>Expert en Gestion des Systèmes d'Information</h2>
             <p>Professionel dans la transformation digitale et le management des SI</p>
             <div className="cta-buttons">
-              {/* <Link to="/contact" className="btn primary">Me contacter</Link>
-              <Link to="/projets" className="btn secondary">Voir mes projets</Link> */}
+              <Link to="/contact" className="btn primary">Me contacter</Link>
+              <Link to="/competences" className="btn secondary">Voir mes competences</Link>
             </div>
           </div>
           <div className="hero-image">
             {/* Image placeholder */}
             <div >
-                <img src='./public/image.jpg' style={{width:200,padding:10,borderRadius:50}}/>
+                <img src='image.jpg' style={{width:200,padding:10,borderRadius:50}}/>
             </div>
           </div>
         </div>
