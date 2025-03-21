@@ -72,7 +72,7 @@ const Header = () => {
       transition: 'all 0.3s',
     },
     navToggleSpanOpen1: {
-      transform: 'translateY(8px) rotate(45deg)',
+      transform: 'translateY(8px) rotate(45deg)', 
     },
     navToggleSpanOpen2: {
       opacity: 0,
