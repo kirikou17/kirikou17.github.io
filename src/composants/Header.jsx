@@ -98,7 +98,7 @@ const Header = () => {
       <div className="container" style={headerStyles.container}>
         <div className="logo" style={headerStyles.logo}>
           <h1 style={headerStyles.logoH1}>Moussa KANOUTE</h1>
-          <p style={headerStyles.logoP}>Manageur de Systèmes d'Information</p>
+          <p style={headerStyles.logoP}>Manageur de Systèmes d'Information (Jr)</p>
         </div>
         <div className="nav-toggle" onClick={() => setMenuOpen(!menuOpen)} style={headerStyles.navToggle}>
           <span style={{ ...headerStyles.navToggleSpan, ...(menuOpen ? headerStyles.navToggleSpanOpen1 : {}) }}></span>

@@ -8,8 +8,8 @@ const Home = () => {
       <section className="home">
         <div className="hero">
           <div className="hero-content">
-            <h2>Expert en Management des Systèmes d'Information</h2>
-            <p>Professionel dans la transformation digitale et le management des SI</p>
+            <h2>Spécialiste junior en Management des SI</h2>
+            <p>Professionnel de la transformation digitale et du management des SI </p>
             <div className="cta-buttons">
               <Link to="/contact" className="btn primary">Me contacter</Link>
               <Link to="/competences" className="btn secondary">Voir mes competences</Link>
@@ -26,11 +26,9 @@ const Home = () => {
         <div className="summary">
           <h3>Mon Profil</h3>
           <p>
-            Manageur de Systèmes d'Information expérimenté, je pilote des projets de transformation digitale
-            et coordonne les équipes techniques pour garantir l'alignement des SI avec la stratégie d'entreprise.
-            Expert en gouvernance IT, gestion de projets et optimisation des processus métiers.
+          Axé sur la transformation digitale et le management des SI, je propose des solutions innovantes pour rationaliser les opérations et maximiser l'efficacité des entreprises modernes.
           </p>
-        </div>
+          </div>
         
         <div className="key-skills">
           <h3>Domaines d'Expertise</h3>
