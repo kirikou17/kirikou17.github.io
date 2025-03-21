@@ -1,42 +1,74 @@
-// ... existing code ...
-import React, { useState } from 'react'; // Ajout de l'importation de React et useState
-import { Link } from 'react-router-dom'; // Ajout de l'importation de Link
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
-  
-    return (
-      <header className="header">
-        <div className="logo">
-          <h1>Moussa KANOUTE</h1>
-          <p>Manageur de Systèmes d'Information</p>
-        </div>
-        <div className="nav-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <nav className={`nav ${menuOpen ? 'open' : ''}`}>
-          {/* <ul>
-            <li><Link to="/" onClick={() => setMenuOpen(false)}>Accueil</Link></li>
-            <li><Link to="/competences" onClick={() => setMenuOpen(false)}>Compétences</Link></li>
-            <li><Link to="/experiences" onClick={() => setMenuOpen(false)}>Expériences</Link></li>
-            <li><Link to="/projets" onClick={() => setMenuOpen(false)}>Projets</Link></li>
-            <li><Link to="/formation" onClick={() => setMenuOpen(false)}>Formation</Link></li>
-            <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
-          </ul> */}
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-<ul>
-            <li><Link to="/portfolio/" onClick={() => setMenuOpen(false)}>Accueil</Link></li>
-            <li><Link to="/competences" onClick={() => setMenuOpen(false)}>Compétences</Link></li>
-            <li><Link to="/experiences" onClick={() => setMenuOpen(false)}>Expériences</Link></li>
-            {/* <li >Projets</li> */}
-            <li><Link to="/formation" onClick={() => setMenuOpen(false)}>Formation</Link></li>
-            <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
-        </ul>
-        </nav>
-      </header>
-    );
+  // Détecte si l'écran est en mode mobile
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Vérifier au chargement initial
+    checkIfMobile();
+    
+    // Vérifier à chaque redimensionnement
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Nettoyer l'event listener
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
+  const headerStyles = {
+   
   };
 
-  export default Header
+  return (
+    <header className="header" style={headerStyles.header}>
+      <div className="container" style={headerStyles.container}>
+        <div className="logo" style={headerStyles.logo}>
+          <h1 style={headerStyles.logoH1}>Moussa KANOUTE</h1>
+          <p style={headerStyles.logoP}>Manageur de Systèmes d'Information</p>
+        </div>
+        <div className="nav-toggle" onClick={() => setMenuOpen(!menuOpen)} style={headerStyles.navToggle}>
+          <span style={{ ...headerStyles.navToggleSpan, ...(menuOpen ? headerStyles.navToggleSpanOpen1 : {}) }}></span>
+          <span style={{ ...headerStyles.navToggleSpan, ...(menuOpen ? headerStyles.navToggleSpanOpen2 : {}) }}></span>
+          <span style={{ ...headerStyles.navToggleSpan, ...(menuOpen ? headerStyles.navToggleSpanOpen3 : {}) }}></span>
+        </div>
+        <nav className={`nav ${menuOpen ? 'open' : ''}`} style={headerStyles.nav}>
+          <ul style={headerStyles.navUl}>
+            <li className="nav-item">
+              <Link className="nav-link" to="/portfolio/" onClick={() => setMenuOpen(false)} style={headerStyles.navA}>
+                Accueil
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/competences" onClick={() => setMenuOpen(false)} style={headerStyles.navA}>
+                Compétences
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/experiences" onClick={() => setMenuOpen(false)} style={headerStyles.navA}>
+                Expériences
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/formation" onClick={() => setMenuOpen(false)} style={headerStyles.navA}>
+                Formation
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/contact" onClick={() => setMenuOpen(false)} style={headerStyles.navA}>
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
