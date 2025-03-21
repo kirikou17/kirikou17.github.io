@@ -22,7 +22,75 @@ const Header = () => {
   }, []);
 
   const headerStyles = {
-   
+    header: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: '1rem 2rem',
+      backgroundColor: 'var(--background-color)',
+      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
+    },
+    logo: {
+      display: 'flex',
+      flexDirection: 'column',
+    },
+    logoH1: {
+      fontSize: '1.5rem',
+      color: 'var(--primary-color)',
+      margin: 0,
+    },
+    logoP: {
+      fontSize: '0.875rem',
+      color: 'var(--text-light)',
+      margin: 0,
+    },
+    navUl: {
+      display: 'flex',
+      listStyle: 'none',
+      gap: '1.5rem',
+      margin: 0,
+      padding: 0,
+      flexDirection: isMobile ? 'column' : 'row',
+    },
+    navA: {
+      textDecoration: 'none',
+      color: 'var(--text-color)',
+      fontWeight: '500',
+      transition: 'color 0.3s',
+    },
+    navToggle: {
+      display: isMobile ? 'flex' : 'none', // Afficher seulement en mode mobile
+      flexDirection: 'column',
+      gap: '5px',
+      cursor: 'pointer',
+    },
+    navToggleSpan: {
+      display: 'block',
+      width: '25px',
+      height: '3px',
+      backgroundColor: 'var(--text-color)',
+      transition: 'all 0.3s',
+    },
+    navToggleSpanOpen1: {
+      transform: 'translateY(8px) rotate(45deg)',
+    },
+    navToggleSpanOpen2: {
+      opacity: 0,
+    },
+    navToggleSpanOpen3: {
+      transform: 'translateY(-8px) rotate(-45deg)',
+    },
+    nav: {
+      transition: 'all 0.3s ease',
+      display: isMobile && !menuOpen ? 'none' : 'block', // Cache le menu en mode mobile quand il est fermé
+    },
+    container: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      width: '100%',
+      flexWrap: isMobile ? 'wrap' : 'nowrap',
+    },
   };
 
   return (
