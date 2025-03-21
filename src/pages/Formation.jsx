@@ -33,7 +33,7 @@ const Formation = () => {
     ];
 
     return (
-        <section className="formation">
+        <section className="formation"  style={{marginTop:75}}>
             <h2>Formation</h2>
 
             <div className="formation-section">

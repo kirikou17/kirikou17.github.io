@@ -34,7 +34,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="contact">
+    <section className="contact" style={{marginTop:75}}>
       <h2>Contact</h2>
 
       <div className="contact-container">

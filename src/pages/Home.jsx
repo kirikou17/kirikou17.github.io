@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'; // Ajout de l'importation de Link
 const Home = () => {
     return (
    
-      <section className="home">
+      <section className="home" style={{marginTop:75}}>
         <div className="hero">
           <div className="hero-content">
             <h2>Spécialiste junior en Management des SI</h2>

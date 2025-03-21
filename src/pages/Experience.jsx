@@ -19,7 +19,7 @@ const Experiences = () => {
     ];
 
     return (
-        <section className="experiences">
+        <section className="experiences" style={{marginTop:75}}>
             <h2>Expériences Professionnelles</h2>
 
             <div className="timeline">

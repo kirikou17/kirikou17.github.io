@@ -35,7 +35,7 @@ const Competences = () => {
     ];
 
     return (
-        <section className="competences">
+        <section className="competences" style={{marginTop:75}}>
             <h2>Compétences</h2>
 
             <div className="competences-container">

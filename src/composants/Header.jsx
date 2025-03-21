@@ -5,19 +5,15 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Détecte si l'écran est en mode mobile
   useEffect(() => {
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    
-    // Vérifier au chargement initial
+
     checkIfMobile();
-    
-    // Vérifier à chaque redimensionnement
+
     window.addEventListener('resize', checkIfMobile);
-    
-    // Nettoyer l'event listener
+
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
@@ -29,21 +25,13 @@ const Header = () => {
       padding: '1rem 2rem',
       backgroundColor: 'var(--background-color)',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
+      position: 'fixed', // Ajout de position: fixed
+      top: 0, // Ajout de top: 0
+      left: 0, // Ajout de left: 0
+      width: '100%', // Ajout de width: 100%
+      zIndex: 100, // Ajout de zIndex pour s'assurer qu'il est au-dessus du contenu
     },
-    logo: {
-      display: 'flex',
-      flexDirection: 'column',
-    },
-    logoH1: {
-      fontSize: '1.5rem',
-      color: 'var(--primary-color)',
-      margin: 0,
-    },
-    logoP: {
-      fontSize: '0.875rem',
-      color: 'var(--text-light)',
-      margin: 0,
-    },
+    // ... autres styles ...
     navUl: {
       display: 'flex',
       listStyle: 'none',
@@ -59,7 +47,7 @@ const Header = () => {
       transition: 'color 0.3s',
     },
     navToggle: {
-      display: isMobile ? 'flex' : 'none', // Afficher seulement en mode mobile
+      display: isMobile ? 'flex' : 'none',
       flexDirection: 'column',
       gap: '5px',
       cursor: 'pointer',
@@ -72,7 +60,7 @@ const Header = () => {
       transition: 'all 0.3s',
     },
     navToggleSpanOpen1: {
-      transform: 'translateY(8px) rotate(45deg)', 
+      transform: 'translateY(8px) rotate(45deg)',
     },
     navToggleSpanOpen2: {
       opacity: 0,
@@ -82,7 +70,7 @@ const Header = () => {
     },
     nav: {
       transition: 'all 0.3s ease',
-      display: isMobile && !menuOpen ? 'none' : 'block', // Cache le menu en mode mobile quand il est fermé
+      display: isMobile && !menuOpen ? 'none' : 'block',
     },
     container: {
       display: 'flex',
@@ -134,7 +122,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-      </div>
+      </div> 
     </header>
   );
 };
