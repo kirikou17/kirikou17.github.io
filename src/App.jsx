@@ -18,12 +18,13 @@ function App (){
       <div className="app">
         <Header />
         <Routes>
+          
           <Route path="/portfolio/" element={<Home />} />
-          <Route path="/competences" element={<Competences />} />
-          <Route path="/experiences" element={<Experiences />} />
+          <Route path="/portfolio/competences" element={<Competences />} />
+          <Route path="/portfolio/experiences" element={<Experiences />} />
           {/* <Route path="/projets" element={<Projets />} /> */}
-          <Route path="/formation" element={<Formation />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/portfolio/formation" element={<Formation />} />
+          <Route path="/portfolio/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </div>

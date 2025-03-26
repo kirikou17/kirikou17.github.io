@@ -4,7 +4,14 @@ import { Link, useNavigate } from 'react-router-dom';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const navigate= useNavigate()
+  const navigate = useNavigate();
+
+  
+
+  // Fonction pour forcer le scroll vers le haut
+  const scrollToTop = () => {
+    window.scrollTo(0);
+  };
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -12,7 +19,6 @@ const Header = () => {
     };
 
     checkIfMobile();
-
     window.addEventListener('resize', checkIfMobile);
 
     return () => window.removeEventListener('resize', checkIfMobile);
@@ -31,7 +37,6 @@ const Header = () => {
       left: 0,
       width: '100%',
       zIndex: 100,
-      
     },
     navUl: {
       display: 'flex',
@@ -52,8 +57,8 @@ const Header = () => {
       flexDirection: 'column',
       gap: '5px',
       cursor: 'pointer',
-      alignSelf: 'center', // Alignement vertical avec le logo
-      padding: '0.5rem',    // Ajoute un peu d'espace autour de l'icône
+      alignSelf: 'center',
+      padding: '0.5rem',
     },
     navToggleSpan: {
       display: 'block',
@@ -82,53 +87,105 @@ const Header = () => {
       width: '100%',
       flexWrap: isMobile ? 'wrap' : 'nowrap',
     },
-    logo:{
+    logo: {
       cursor: 'pointer',
-    }
+    },
   };
 
   return (
     <header className="header" style={headerStyles.header}>
       <div className="container" style={headerStyles.container}>
-        <div className="logo" style={headerStyles.logo} onClick={()=>navigate('/portfolio/')}>
+        {/* Logo */}
+        <div className="logo" style={headerStyles.logo} onClick={() => {
+          navigate('/portfolio/');
+          scrollToTop(); // Scroll vers le haut lorsque le logo est cliqué
+        }}>
           <h1 style={headerStyles.logoH1}>Moussa KANOUTE</h1>
           <p style={headerStyles.logoP}>IT Manager (Jr)</p>
         </div>
-        <div className="nav-toggle" onMouseDown={() => setMenuOpen(!menuOpen)} style={headerStyles.navToggle}>
+
+        {/* Icône burger */}
+        <div
+          className="nav-toggle"
+          onMouseDown={() => setMenuOpen(!menuOpen)}
+          style={headerStyles.navToggle}
+        >
           <span style={{ ...headerStyles.navToggleSpan, ...(menuOpen ? headerStyles.navToggleSpanOpen1 : {}) }}></span>
           <span style={{ ...headerStyles.navToggleSpan, ...(menuOpen ? headerStyles.navToggleSpanOpen2 : {}) }}></span>
           <span style={{ ...headerStyles.navToggleSpan, ...(menuOpen ? headerStyles.navToggleSpanOpen3 : {}) }}></span>
         </div>
+
+        {/* Menu */}
         <nav className={`nav ${menuOpen ? 'open' : ''}`} style={headerStyles.nav}>
           <ul style={headerStyles.navUl}>
             <li className="nav-item">
-              <Link className="nav-link" to="/portfolio/" onClick={() => setMenuOpen(false)} style={headerStyles.navA}>
+              <Link
+                className="nav-link"
+                to="/portfolio/"
+                onClick={() => {
+                  setMenuOpen(false);
+                  scrollToTop(); // Scroll vers le haut
+                }}
+                style={headerStyles.navA}
+              >
                 Accueil
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/competences" onClick={() => setMenuOpen(false)} style={headerStyles.navA}>
+              <Link
+                className="nav-link"
+                to="/portfolio/competences"
+                onClick={() => {
+                  setMenuOpen(false);
+                  scrollToTop(); // Scroll vers le haut
+                }}
+                style={headerStyles.navA}
+              >
                 Compétences
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/experiences" onClick={() => setMenuOpen(false)} style={headerStyles.navA}>
+              <Link
+                className="nav-link"
+                to="/portfolio/experiences"
+                onClick={() => {
+                  setMenuOpen(false);
+                  scrollToTop(); // Scroll vers le haut
+                }}
+                style={headerStyles.navA}
+              >
                 Expériences
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/formation" onClick={() => setMenuOpen(false)} style={headerStyles.navA}>
+              <Link
+                className="nav-link"
+                to="/portfolio/formation"
+                onClick={() => {
+                  setMenuOpen(false);
+                  scrollToTop(); // Scroll vers le haut
+                }}
+                style={headerStyles.navA}
+              >
                 Formation
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact" onClick={() => setMenuOpen(false)} style={headerStyles.navA}>
+              <Link
+                className="nav-link"
+                to="/portfolio/contact"
+                onClick={() => {
+                  setMenuOpen(false);
+                  scrollToTop(); // Scroll vers le haut
+                }}
+                style={headerStyles.navA}
+              >
                 Contact
               </Link>
             </li>
           </ul>
         </nav>
-      </div> 
+      </div>
     </header>
   );
 };
