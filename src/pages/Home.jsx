@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom'; // Ajout de l'importation de Link
 
 
 const Home = () => {
+
+  const scrollToTop = () => {
+    window.scrollTo(0);
+  };
+
     return (
    
       <section className="home" style={{marginTop:75}}>
@@ -11,8 +16,8 @@ const Home = () => {
             <h2>Spécialiste junior en Management des SI</h2>
             <p>Professionnel de la transformation digitale et du management des SI </p>
             <div className="cta-buttons">
-              <Link to="/contact" className="btn primary">Me contacter</Link>
-              <Link to="/competences" className="btn secondary">Voir mes competences</Link>
+              <Link to="/portfolio/contact" onClick={scrollToTop} className="btn primary">Me contacter</Link>
+              <Link to="/portfolio/competences" onClick={scrollToTop} className="btn secondary">Voir mes competences</Link>
             </div>
           </div>
           <div className="hero-image">
