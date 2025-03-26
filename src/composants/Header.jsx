@@ -121,7 +121,7 @@ const Header = () => {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="/portfolio/"
+                to="/portfolio"
                 onClick={() => {
                   setMenuOpen(false);
                   scrollToTop(); // Scroll vers le haut

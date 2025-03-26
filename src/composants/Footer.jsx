@@ -10,7 +10,7 @@ const Footer = () => {
           </div>
           <div className="footer-nav">
             <ul>
-              <li><Link to="/portfolio/">Accueil</Link></li>
+              <li><Link to="/portfolio">Accueil</Link></li>
               <li><Link to="/competences">Compétences</Link></li>
               <li><Link to="/experiences">Expériences</Link></li>
               {/* <li><Link to="/projets">Projets</Link></li> */}
