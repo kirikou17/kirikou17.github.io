@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const navigate= useNavigate()
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -25,13 +26,13 @@ const Header = () => {
       padding: '1rem 2rem',
       backgroundColor: 'var(--background-color)',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
-      position: 'fixed', // Ajout de position: fixed
-      top: 0, // Ajout de top: 0
-      left: 0, // Ajout de left: 0
-      width: '100%', // Ajout de width: 100%
-      zIndex: 100, // Ajout de zIndex pour s'assurer qu'il est au-dessus du contenu
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100%',
+      zIndex: 100,
+      
     },
-    // ... autres styles ...
     navUl: {
       display: 'flex',
       listStyle: 'none',
@@ -51,6 +52,8 @@ const Header = () => {
       flexDirection: 'column',
       gap: '5px',
       cursor: 'pointer',
+      alignSelf: 'center', // Alignement vertical avec le logo
+      padding: '0.5rem',    // Ajoute un peu d'espace autour de l'icône
     },
     navToggleSpan: {
       display: 'block',
@@ -79,16 +82,19 @@ const Header = () => {
       width: '100%',
       flexWrap: isMobile ? 'wrap' : 'nowrap',
     },
+    logo:{
+      cursor: 'pointer',
+    }
   };
 
   return (
     <header className="header" style={headerStyles.header}>
       <div className="container" style={headerStyles.container}>
-        <div className="logo" style={headerStyles.logo}>
+        <div className="logo" style={headerStyles.logo} onClick={()=>navigate('/portfolio/')}>
           <h1 style={headerStyles.logoH1}>Moussa KANOUTE</h1>
-          <p style={headerStyles.logoP}>Manageur de Systèmes d'Information (Jr)</p>
+          <p style={headerStyles.logoP}>IT Manager (Jr)</p>
         </div>
-        <div className="nav-toggle" onClick={() => setMenuOpen(!menuOpen)} style={headerStyles.navToggle}>
+        <div className="nav-toggle" onMouseDown={() => setMenuOpen(!menuOpen)} style={headerStyles.navToggle}>
           <span style={{ ...headerStyles.navToggleSpan, ...(menuOpen ? headerStyles.navToggleSpanOpen1 : {}) }}></span>
           <span style={{ ...headerStyles.navToggleSpan, ...(menuOpen ? headerStyles.navToggleSpanOpen2 : {}) }}></span>
           <span style={{ ...headerStyles.navToggleSpan, ...(menuOpen ? headerStyles.navToggleSpanOpen3 : {}) }}></span>
