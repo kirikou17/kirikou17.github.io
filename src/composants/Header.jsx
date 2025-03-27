@@ -134,7 +134,7 @@ const Header = () => {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="/portfolio/competences/"
+                to="/portfolio/competences"
                 onClick={() => {
                   setMenuOpen(false);
                   scrollToTop(); // Scroll vers le haut
@@ -147,7 +147,7 @@ const Header = () => {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="/portfolio/experiences/"
+                to="/portfolio/experiences"
                 onClick={() => {
                   setMenuOpen(false);
                   scrollToTop(); // Scroll vers le haut
@@ -160,7 +160,7 @@ const Header = () => {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="/portfolio/formation/"
+                to="/portfolio/formation"
                 onClick={() => {
                   setMenuOpen(false);
                   scrollToTop(); // Scroll vers le haut
@@ -173,7 +173,7 @@ const Header = () => {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="/portfolio/contact/"
+                to="/portfolio/contact"
                 onClick={() => {
                   setMenuOpen(false);
                   scrollToTop(); // Scroll vers le haut

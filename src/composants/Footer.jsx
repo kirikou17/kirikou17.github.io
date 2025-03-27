@@ -10,11 +10,11 @@ const Footer = () => {
           </div>
           <div className="footer-nav">
             <ul>
-              <li><Link to="/portfolio/">Accueil</Link></li>
-              <li><Link to="/portfolio/competences/">Compétences</Link></li>
-              <li><Link to="/portfolio/experiences/">Expériences</Link></li>
+              <li><Link to="/portfolio/" onClick={()=>window.scrollTo(0)}>Accueil</Link></li>
+              <li><Link to="/portfolio/competences" onClick={()=>window.scrollTo(0)}>Compétences</Link></li>
+              <li><Link to="/portfolio/experiences" onClick={()=>window.scrollTo(0)}>Expériences</Link></li>
               {/* <li><Link to="/projets">Projets</Link></li> */}
-              <li><Link to="/portfolio/contact/">Contact</Link></li>
+              <li><Link to="/portfolio/contact" onClick={()=>window.scrollTo(0)}>Contact</Link></li>
             </ul>
           </div>
         </div>
