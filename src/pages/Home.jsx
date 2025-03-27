@@ -14,13 +14,13 @@ const Home = () => {
         <div className="hero">
           <div className="hero-content">
             <h2>Spécialiste junior en Management des SI</h2>
-            <p>Professionnel de la transformation digitale et du management des SI </p>
+            <p>Professionnel en transformation digitale en management des SI </p>
             <div className="cta-buttons">
-              <Link to="/portfolio/contact" onClick={scrollToTop} className="btn primary">Me contacter</Link>
-              <Link to="/portfolio/competences" onClick={scrollToTop} className="btn secondary">Voir mes competences</Link>
+              <Link to="/portfolio/contact" className="btn primary">Me contacter</Link>
+              <Link to="/portfolio/competences"  className="btn secondary">Voir mes competences</Link>
             </div>
           </div>
-          <div className="hero-image">
+          <div className="hero-image"> 
             {/* Image placeholder */}
             <div >
                 <img src="image.jpg" style={{width:200,padding:10,borderRadius:50}} />

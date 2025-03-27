@@ -35,7 +35,7 @@ const Contact = () => {
 
   return (
     <section className="contact" style={{marginTop:75}}>
-      <h2>Contact</h2>
+      <h2 >Contact</h2>
 
       <div className="contact-container">
         <div className="contact-info">
