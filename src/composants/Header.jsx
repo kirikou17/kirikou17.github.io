@@ -123,8 +123,9 @@ const Header = () => {
                 className="nav-link"
                 to="/portfolio/"
                 onClick={() => {
-                  setMenuOpen(false);
                   scrollToTop(); // Scroll vers le haut
+                  setMenuOpen(false);
+                  
                 }}
                 style={headerStyles.navA}
               >
@@ -136,8 +137,9 @@ const Header = () => {
                 className="nav-link"
                 to="/portfolio/competences"
                 onClick={() => {
-                  setMenuOpen(false);
                   scrollToTop(); // Scroll vers le haut
+                  setMenuOpen(false);
+                 
                 }}
                 style={headerStyles.navA}
               >
@@ -150,7 +152,7 @@ const Header = () => {
                 to="/portfolio/experiences"
                 onClick={() => {
                   setMenuOpen(false);
-                  scrollToTop(); // Scroll vers le haut
+                  // scrollToTop(); // Scroll vers le haut
                 }}
                 style={headerStyles.navA}
               >
