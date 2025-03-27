@@ -16,8 +16,8 @@ const Home = () => {
             <h2>Spécialiste junior en Management des SI</h2>
             <p>Professionnel de la transformation digitale et du management des SI </p>
             <div className="cta-buttons">
-              <Link to="/contact" onClick={scrollToTop} className="btn primary">Me contacter</Link>
-              <Link to="/competences" onClick={scrollToTop} className="btn secondary">Voir mes competences</Link>
+              <Link to="/portfolio/contact" onClick={scrollToTop} className="btn primary">Me contacter</Link>
+              <Link to="/portfolio/competences" onClick={scrollToTop} className="btn secondary">Voir mes competences</Link>
             </div>
           </div>
           <div className="hero-image">
