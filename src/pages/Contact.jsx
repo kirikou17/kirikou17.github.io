@@ -19,19 +19,35 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Ici, on simulerait l'envoi des données à un serveur
-    console.log("Données du formulaire:", formData);
-    setFormSubmitted(true);
-    // Réinitialiser le formulaire
-    setFormData({
-      nom: "",
-      email: "",
-      sujet: "",
-      message: "",
-    });
+
+    // URL Formspree
+    const FORMSPREE_URL = "https://formspree.io/f/xldjwebe"; // Remplacez par votre URL Formspree
+
+    try {
+      // Envoyer les données du formulaire via une requête POST
+      const response = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      // Vérifier si la réponse est réussie
+      if (response.ok) {
+        alert("Message envoyé avec succès !");
+        setFormData({ nom: "", email: "", sujet: "", message: "" }); // Réinitialiser le formulaire
+      } else {
+        alert("Erreur lors de l'envoi du message.");
+      }
+    } catch (error) {
+      console.error("Erreur :", error);
+      alert("Une erreur est survenue. Veuillez réessayer.");
+    }
   };
+
 
   return (
     <section className="contact" style={{marginTop:75}}>
@@ -78,65 +94,65 @@ const Contact = () => {
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <label htmlFor="nom" className="form-label">
-                  Nom
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="nom"
-                  name="nom"
-                  value={formData.nom}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="sujet" className="form-label">
-                  Sujet
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="sujet"
-                  name="sujet"
-                  value={formData.sujet}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="message" className="form-label">
-                  Message
-                </label>
-                <textarea
-                  className="form-control"
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" className="btn" style={{backgroundColor:'#8B4513', color:'white'}}>
-                Envoyer
-              </button>
-            </form>
+      <div className="mb-3">
+        <label htmlFor="nom" className="form-label">
+          Nom
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          id="nom"
+          name="nom"
+          value={formData.nom}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="email" className="form-label">
+          Email
+        </label>
+        <input
+          type="email"
+          className="form-control"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="sujet" className="form-label">
+          Sujet
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          id="sujet"
+          name="sujet"
+          value={formData.sujet}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="message" className="form-label">
+          Message
+        </label>
+        <textarea
+          className="form-control"
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+        ></textarea>
+      </div>
+      <button type="submit" className="btn" style={{ backgroundColor: "#8B4513", color: "white" }}>
+        Envoyer
+      </button>
+    </form>
           )}
         </div>
       </div>
