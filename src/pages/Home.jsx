@@ -14,7 +14,7 @@ const Home = () => {
         <div className="hero">
           <div className="hero-content">
             <h2>Spécialiste junior en Management des SI</h2>
-            <p>Professionnel en transformation digitale en management des SI </p>
+            <p>Professionnel en transformation digitale et en management des SI </p>
             <div className="cta-buttons">
               <Link to="/portfolio/contact" className="btn primary">Me contacter</Link>
               <Link to="/portfolio/competences"  className="btn secondary">Voir mes competences</Link>
